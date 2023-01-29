@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meudeployment
+spec:
+  selector:
+    matchLabels:
+      app: exemplo
+  template:
+    metadata:
+      labels:
+        app: exemplo
+    spec:
+      containers:
+      - name: meucontainer
+        image: thefly72003/temperatura-converte:latest
+
+
+
+#kubectl get pods
+#kubectl port-forward pod/meudeployment-6544c6dd89-fzbkc 8080:8080
